@@ -3,6 +3,7 @@ import { List } from './ImageGallery.styled';
 import PropTypes from 'prop-types';
 
 function ImageGallery({ images, toggleModal, modalImageLoad }) {
+  console.log(images);
   return (
     <List>
       {images.map(({ id, tags, webformatURL, largeImageURL }) => (
@@ -12,9 +13,7 @@ function ImageGallery({ images, toggleModal, modalImageLoad }) {
           webformatURL={webformatURL}
           modalImageLoad={modalImageLoad}
           largeImageURL={largeImageURL}
-          onClickItem={() => {
-            toggleModal();
-          }}
+          onClickItem={toggleModal}
         />
       ))}
     </List>
