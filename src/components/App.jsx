@@ -45,6 +45,7 @@ function App() {
   }, [page, searchQuery]);
 
   const getLargeImageForModal = data => {
+    // console.log(data);
     toggleModal();
     setLargeImg(data);
   };

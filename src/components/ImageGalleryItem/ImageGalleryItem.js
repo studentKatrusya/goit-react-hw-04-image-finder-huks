@@ -5,7 +5,7 @@ const ImageGalleryItem = ({
   id,
   webformatURL,
   tags,
-  largeImageUrl,
+  largeImageURL,
   onClickItem,
   modalImageLoad,
 }) => {
@@ -14,13 +14,30 @@ const ImageGalleryItem = ({
       <Image
         alt={tags}
         src={webformatURL}
-        data-source={largeImageUrl}
-        onClick={onClickItem}
-        modalImageLoad={modalImageLoad}
+        data-source={largeImageURL}
+        // onClick={onClickItem}
+        onClick={() => {
+          modalImageLoad(largeImageURL);
+          // onClickItem();
+        }}
+        // modalImageLoad={modalImageLoad}
       />
     </Item>
   );
 };
+
+// const ImageGalleryItem = ({ nameList, onToggleMenu, modalImageLoad }) => {
+//   return (
+//     <li className={s.ImageGalleryItem}>
+//       <img
+//         onClick={() => modalImageLoad(nameList.largeImageURL)}
+//         className={s.ImageGalleryItemimage}
+//         src={nameList.webformatURL}
+//         alt={nameList.type}
+//       />
+//     </li>
+//   );
+// };
 
 ImageGalleryItem.propTypes = {
   id: PropTypes.number,

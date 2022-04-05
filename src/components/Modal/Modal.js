@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const modalRoot = document.querySelector('#modal-root');
 
-function Modal({ image, onClickModal }) {
+function Modal({ image, onClickModal, webformatURL, tags }) {
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => {
